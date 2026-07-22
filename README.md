@@ -1,36 +1,9 @@
 NekoOmega, make Neko great again!
 ============
 
-[Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped)
-
-[Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/zeroomegaproxy-switchy-/dmaldhchmoafliphkijbfhaomcgglmgd)
-
-[Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/zeroomega/)
-
-> ⚠️ NekoOmega is a community fork. The store links above currently point to the upstream ZeroOmega project. NekoOmega builds can be loaded manually as unpacked extensions from the Releases page.
-
 Manage and switch between multiple proxies quickly & easily.
 
 [![Translation status](https://hosted.weblate.org/widgets/switchyomega/-/svg-badge.svg)](https://hosted.weblate.org/engage/switchyomega/?utm_source=widget)
-
-Chromium Extension
-------------------
-The project is available as a Chromium Extension.
-
-You can try it on [Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped),
-or grab a packaged extension file (CRX) for offline installation on the [Releases page](https://github.com/bocchi810/NekoOmega/releases).
-
-Please [report issues on the issue tracker](https://github.com/bocchi810/NekoOmega/issues).
-
-Firefox Addon
-----------------------------
-
-There is also a WebExtension port, which allows installing in Firefox. Compatibility with Firefox has increased significantly recently.
-
-You can try it on [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/zeroomega/) (upstream ZeroOmega),
-or grab a packaged extension file (XPI) for offline installation on the [Releases page](https://github.com/bocchi810/NekoOmega/releases).
-
-Please [report issues on the issue tracker](https://github.com/bocchi810/NekoOmega/issues), browser-specific bugs are possible.
 
 Development status
 ------------------
