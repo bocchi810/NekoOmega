@@ -1,4 +1,4 @@
-NekoOmega, forked from SwitchyOmega compatible with manifest v3
+NekoOmega, make Neko great again!
 ============
 
 [Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped)
@@ -85,7 +85,7 @@ below.
 本项目翻译由Weblate托管。如果您希望帮助改进翻译，或将本项目翻译成一种新的语言，请
 点击下方图片链接进入翻译。
 
-[![Translation status](https://hosted.weblate.org/widgets/switchyomega/-/287x66-white.png)](https://hosted.weblate.org/engage/switchyomega/?utm_source=widget)
+[![Translation status](https://hosted.weblate.org/widgets/nekoomega/-/287x66-white.png)](https://hosted.weblate.org/engage/nekoomega/?utm_source=widget)
 
 ## Building the project
 
