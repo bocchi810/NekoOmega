@@ -6,14 +6,14 @@ orderForType =
   'RuleListProfile': 3000
 
 angular.module('omegaDecoration', []).value('profileIcons', {
-  'DirectProfile': 'glyphicon-transfer'
-  'SystemProfile': 'glyphicon-off'
-  'AutoDetectProfile': 'glyphicon-file'
-  'FixedProfile': 'glyphicon-globe'
-  'PacProfile': 'glyphicon-file'
-  'VirtualProfile': 'glyphicon-question-sign'
-  'RuleListProfile': 'glyphicon-list'
-  'SwitchProfile': 'glyphicon-retweet'
+  'DirectProfile': 'arrow_forward'
+  'SystemProfile': 'power_settings_new'
+  'AutoDetectProfile': 'find_replace'
+  'FixedProfile': 'public'
+  'PacProfile': 'description'
+  'VirtualProfile': 'help_outline'
+  'RuleListProfile': 'format_list_bulleted'
+  'SwitchProfile': 'swap_horiz'
 }).constant('profileOrder', (a, b) ->
   diff = (orderForType[a.profileType] | 0) - (orderForType[b.profileType] | 0)
   return diff if diff != 0
@@ -31,8 +31,8 @@ angular.module('omegaDecoration', []).value('profileIcons', {
   template: '''
     <span ng-style="{color: color || getColor(profile)}"
       ng-class="{'virtual-profile-icon': isVirtual(profile)}"
-      class="glyphicon {{icon || getIcon(profile)}}">
-    </span>
+      class="material-icons {{icon || getIcon(profile)}}">
+    {{icon || getIcon(profile)}}</span>
     '''
   scope:
     'profile': '=?omegaProfileIcon'

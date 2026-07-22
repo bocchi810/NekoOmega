@@ -16,8 +16,8 @@ checkNeedFixForSocks5 = (proxy = {}) ->
     # https://github.com/FelisCatus/SwitchyOmega/issues/391
     if globalThis.FORCEFIXEXPORTSCRIPTFORSOCKS
       return true
-    # https://github.com/zero-peak/ZeroOmega/issues/147
-    # https://github.com/zero-peak/ZeroOmega/issues/178
+    # https://github.com/bocchi810/NekoOmega/issues/147
+    # https://github.com/bocchi810/NekoOmega/issues/178
     return false
   return false
 

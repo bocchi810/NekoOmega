@@ -17,7 +17,7 @@ html, body{
 .scroll-to-bottom-btn.btn {
   display: none;
 }
-.scroll-to-bottom-btn.btn .glyphicon:before {
+.scroll-to-bottom-btn.btn .material-icons:before {
   display: inline-block;
   transform: rotate(90deg);
 }

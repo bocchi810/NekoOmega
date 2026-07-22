@@ -1,14 +1,17 @@
-# SwitchyOmega authors:
+# NekoOmega — based on SwitchyOmega (FelisCatus <catusx@gmail.com>)
 
+# NekoOmega author:
+bocchi810
+
+# Upstream authors (SwitchyOmega):
 FelisCatus <catusx@gmail.com>
 
-# SwitchyOmega translators:
-
+# Upstream translators:
 Filip <filip@havlin.cz>
 Michal Čihař <michal@cihar.com>
 masoud Rahmani <mrem71@gmail.com>
 
-# SwitchyOmega includes or links to (unchanged):
+# NekoOmega includes or links to (unchanged):
 # * jQuery UI (custom build)
 #     => omega-web/lib/jquery-ui-*.js
 #     => Copyright 2014 jQuery Foundation and other contributors; Licensed MIT

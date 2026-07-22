@@ -115,10 +115,10 @@ export const initTabsSelector = async (containerEl, opts={})=>{
   <span class="tab-closed-tip">(Closed)</span>
   <span class="btn-group tab-btns">
     <span class="btn btn-default btn-sm refresh-tab-btn">
-      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+      <span class="material-icons refresh" aria-hidden="true"></span>
     </span>
     <span class="btn btn-default btn-sm view-tab-btn">
-      <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+      <span class="material-icons visibility" aria-hidden="true"></span>
     </span>
   </span>
   <span class="tab-tip"></span>

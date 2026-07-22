@@ -18,14 +18,14 @@ import "./img/icons/draw_omega.js"
 import "./js/background.js" // zeroBackground
 
 /**
- * author: suziwen1@gmail.com
+ * author: bocchi810
  **/
 
 const isFirefox = !!globalThis.localStorage
 
 globalThis.POPUPHTMLURL = './popup-iframe.html'
 //if android, (eg. edge canary for android), use default popup/index.html
-//https://github.com/zero-peak/ZeroOmega/issues/93
+//https://github.com/bocchi810/NekoOmega/issues/93
 if (globalThis.navigator && /Android/i.test(globalThis.navigator.userAgent)){
   globalThis.POPUPHTMLURL = './popup/index.html'
 }

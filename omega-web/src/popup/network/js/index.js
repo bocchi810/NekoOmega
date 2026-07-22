@@ -116,7 +116,7 @@ const createTabulator = () => {
     const scrollToBottomBtnEl = document.createElement('button')
     scrollToBottomBtnEl.classList.add('btn', 'btn-default', 'btn-sm', 'scroll-to-bottom-btn')
     scrollToBottomBtnEl.innerHTML = `
-      <span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+      <span class="material-icons fast_forward" aria-hidden="true"></span>
     `
     scrollToBottomBtnEl.onclick = ()=>{
       autoScrollToBottom = true;
@@ -129,7 +129,7 @@ const createTabulator = () => {
     const clearBtnEl = document.createElement('button')
     clearBtnEl.classList.add('btn', 'btn-default', 'btn-sm');
     clearBtnEl.innerHTML = `
-      <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+      <span class="material-icons block" aria-hidden="true"></span>
     `
     clearBtnEl.onclick = async ()=> {
       tabulatorInstance.clearData();
@@ -224,16 +224,16 @@ const createTabulator = () => {
           itemFormatter:function(label, value, item, element){
             switch (value) {
               case "ongoing": {
-                return "<i class='glyphicon glyphicon-circle-arrow-down'/> Ongoing";
+                return "<i class="material-icons">arrow_circle_down</i> Ongoing";
               }
               case "done": {
-                return "<i class='glyphicon glyphicon-ok-sign'/> Done";
+                return "<i class="material-icons">check_circle</i> Done";
               }
               case "fail": {
-                return `<i class='glyphicon glyphicon-exclamation-sign'/> Fail`;
+                return `<i class='material-icons warning'/> Fail`;
               }
               default:{
-                return `<i class='glyphicon glyphicon-info-sign'/> All`;
+                return `<i class='material-icons info'/> All`;
               }
             }
           }
@@ -259,22 +259,22 @@ const createTabulator = () => {
           const request = cell.getRow().getData();
           switch (recentlyStatus) {
             case "start": {
-              return "<i class='glyphicon glyphicon-circle-arrow-down status-start' title='Request start'/>";
+              return "<i class="material-icons status-start" title="Request start">arrow_circle_down</i>";
             }
             case "done": {
-              return "<i class='glyphicon glyphicon-ok-sign status-done' title='Request done'/>";
+              return "<i class="material-icons status-done" title="Request done">check_circle</i>";
             }
             case "timeout": {
-              return "<i class='glyphicon glyphicon-question-sign status-timeout' title='Request timeout'/>";
+              return "<i class='material-icons help status-timeout' title='Request timeout'/>";
             }
             case "timeoutAbort": {
-              return "<i class='glyphicon glyphicon-exclamation-sign status-timeout-abort' title='Request timeout abort'/>";
+              return "<i class='material-icons warning status-timeout-abort' title='Request timeout abort'/>";
             }
             case "error": {
-              return `<i class='glyphicon glyphicon-exclamation-sign status-error' title='Request error: ${request.error || ''}'/>`;
+              return `<i class='material-icons warning status-error' title='Request error: ${request.error || ''}'/>`;
             }
             case "ongoing": {
-              return "<i class='glyphicon glyphicon-circle-arrow-down status-ongoing' title='Request ongoing'/>";
+              return "<i class="material-icons status-ongoing" title="Request ongoing">arrow_circle_down</i>";
             }
           }
         },
@@ -307,7 +307,7 @@ const createTabulator = () => {
           }
         },
         formatter: (cell)=>{
-          return `<span class="glyphicon glyphicon-duplicate copy-btn" aria-hidden="true"></span><span>${safeTexts(decodeURI(cell.getValue()))}</span>`
+          return `<span class="material-icons content_copy copy-btn" aria-hidden="true"></span><span>${safeTexts(decodeURI(cell.getValue()))}</span>`
         },
         cellClick: (e, cell)=>{
           if (e && e.target) {
@@ -337,11 +337,11 @@ const createTabulator = () => {
           const startTimestamp = request.statusInfo["start"];
           const recentlyTimestamp = request.statusInfo[recentlyStatus];
           if (recentlyTimestamp && startTimestamp) {
-            let  icon = `<span class="glyphicon glyphicon-question-sign request-from-icon"></span>`
+            let  icon = `<span class="material-icons help request-from-icon"></span>`
             if (recentlyStatus == 'done') {
-              icon = `<span class="glyphicon glyphicon-cloud request-from-icon" title="From remote server"></span>`
+              icon = `<span class="material-icons request-from-icon" title="From remote server">cloud</span>`
               if (request.fromCache) {
-                icon = `<span class="glyphicon glyphicon-hdd request-from-icon" title="From local cache"></span>`
+                icon = `<span class="material-icons request-from-icon" title="From local cache">storage</span>`
               }
             }
             const duration = Number.parseFloat(recentlyTimestamp - startTimestamp).toFixed(2)

@@ -1,6 +1,6 @@
 'use strict'
 /**
- * author: suziwen1@gmail.com
+ * author: bocchi810
  **/
 let valuesMap = new Map()
 

@@ -56,7 +56,7 @@ jQuery(document).on 'keydown', (e) ->
             if span.length == 0
               span = jQuery('<span/>').addClass('shortcut-help')
             span.text(key)
-            element.find('.glyphicon').after(span)
+            element.find('.material-icons').after(span)
           keys =
             '+direct': '0'
             '+system': 'S'
@@ -115,7 +115,7 @@ module.controller 'PopupCtrl', ($scope, $window, $q, omegaTarget,
   $scope.getIcon = (profile, normal) ->
     return unless profile
     if not normal and $scope.isEffective(profile.name)
-      'glyphicon-ok'
+      'check_circle'
     else
       undefined
   $scope.getProfileTitle = (profile, normal) ->

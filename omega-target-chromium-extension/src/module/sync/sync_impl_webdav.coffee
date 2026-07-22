@@ -1,7 +1,7 @@
 SyncImpl = require('./sync_impl')
 
-COMMIT_FILENAME = 'zeroomega-commit.txt'
-OPTION_FILE_PREFIX = 'zeroomega-'
+COMMIT_FILENAME = 'nekoomega-commit.txt'
+OPTION_FILE_PREFIX = 'nekoomega-'
 OPTION_FILE_SUFFIX = '.json'
 
 class WebDavSyncImpl extends SyncImpl
@@ -14,7 +14,7 @@ class WebDavSyncImpl extends SyncImpl
 
   init: (config) ->
     uri = (config.uri || '').replace(/\/+$/, '')
-    @baseUri = uri + '/zeroomega/'
+    @baseUri = uri + '/nekoomega/'
     @token = config.token || ''
     @username = config.username || ''
     @_authHeader = null

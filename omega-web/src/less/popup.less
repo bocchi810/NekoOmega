@@ -40,6 +40,77 @@ li > a {
   margin-top: -3px;
 }
 
+/* ===== M3 Popup Styles ===== */
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nav-pills.nav-stacked > li > a {
+  border-radius: 20px !important;
+  margin: 1px 4px;
+  padding: 6px 20px 6px 12px !important;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+.nav-pills.nav-stacked > li > a:hover {
+  background-color: var(--selectionBackground);
+}
+
+.nav-pills.nav-stacked > li.active > a,
+.nav-pills.nav-stacked > li.active > a:hover {
+  background-color: color-mix(in srgb, var(--primaryColor) 15%, transparent) !important;
+  color: var(--primaryColor) !important;
+}
+
+.nav-pills.nav-stacked > li.active .dropdown-toggle {
+  border-left: 1px solid var(--primaryColor) !important;
+}
+
+.divider {
+  background-color: var(--selectionBackground);
+  margin: 6px 12px;
+}
+
+.well {
+  border-radius: 12px;
+  border: 1px solid var(--selectionBackground);
+  background: var(--defaultBackground);
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid var(--highlightBackground);
+  background: var(--lighterBackground);
+  padding: 8px 12px;
+  height: auto;
+  transition: border-color 0.15s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primaryColor);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primaryColor) 15%, transparent);
+}
+
+.btn {
+  border-radius: 20px !important;
+  font-weight: 600;
+  border: none;
+  padding: 6px 16px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--primaryColor) !important;
+  color: #fff !important;
+}
+
+.current-domain {
+  color: var(--primaryColor);
+}
+
 .nav-pills.nav-stacked {
   > li > a {
     padding: 5px 25px 5px 8px;

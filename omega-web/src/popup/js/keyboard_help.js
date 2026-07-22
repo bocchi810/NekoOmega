@@ -25,7 +25,7 @@
       var span = document.createElement('span');
       span.classList.add('om-keyboard-help');
       span.textContent = key;
-      var reference = element.querySelector('.glyphicon');
+      var reference = element.querySelector('.material-icons');
       reference.parentNode.insertBefore(span, reference.nextSibling);
     }
   }

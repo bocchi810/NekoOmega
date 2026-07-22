@@ -4,7 +4,7 @@ Promise = OmegaTarget.Promise
 chromeApiPromisify = require('../chrome_api').chromeApiPromisify
 ProxyImpl = require('./proxy_impl')
 
-notExistentWebsite = "preflight-auth.non-existent-website.zzzzzzzzeroomega.zero"
+notExistentWebsite = "preflight-auth.non-existent-website.zzzzzzznekoomega.neko"
 
 getFirstAuthProfile = (profile, options) ->
   for rule in profile.rules

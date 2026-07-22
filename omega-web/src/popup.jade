@@ -20,10 +20,11 @@ doctype html
 html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
   head
     meta(charset='utf-8')
-    title {{'popup_title' | tr}} (Zer&#8203oOmega)
+    title {{"popup_title" | tr}}
     meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
     link(rel='stylesheet' href='lib/bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet' href='css/popup.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
     style.om-style
       {{customCss}}
   body(ng-class='{"with-condition-form": showConditionForm}')
@@ -42,7 +43,7 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
               placeholder='{{"popup_externalProfileName" | tr}}' ui-validate='validateProfileName' autofocus)
       li.request-info(ng-show='!!requestInfoProvided' class='bg-warning')
         a(href='#' role='button' ng-click='showRequestInfo = true' data-shortcut='requestInfo')
-          span.glyphicon.glyphicon-warning-sign.text-warning
+          span.material-icons.text-warning warning
           = ' '
           | {{'popup_requestErrorCount' | tr:[requestInfo.errorCount]}}
       li.divider
@@ -55,7 +56,7 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
           = ' '
           | [{{profile.defaultProfileName}}]
           button.dropdown-toggle.btn.btn-default(role='button' dropdown-toggle href='#' ng-click='$event.stopPropagation()')
-            span.glyphicon.glyphicon-chevron-down
+            span.material-icons expand_more
         ul.dropdown-menu(ng-if='!!profile.validResultProfiles')
           li(ng-repeat='p in profile.validResultProfiles' ng-class='{active: p.name == profile.defaultProfileName}')
             a(href='#' role='button' ng-click='setDefaultProfile(profile.name, p.name)' title='{{getProfileTitle(profile)}}')
@@ -63,12 +64,12 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
       li.divider(ng-show='!!currentDomain && validResultProfiles.length')
       li(ng-show='!!currentProfileCanAddRule && !!currentDomain')
         a(href='#' role='button' ng-click='prepareConditionForm()' data-shortcut='addRule')
-          span.glyphicon.glyphicon-plus
+          span.material-icons add
           = ' '
           span {{'popup_addCondition' | tr}}
       li(ng-show='!!currentDomain && validResultProfiles.length' dropdown is-open="tempRuleMenu.open")
         a.dropdown-toggle(href='#' role='button' dropdown-toggle data-shortcut='tempRule')
-          span.glyphicon.glyphicon-filter
+          span.material-icons filter_list
           = ' '
           span.current-domain {{currentDomain}}
           span.caret
@@ -80,7 +81,7 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
       li.divider
       li
         a(href='#' role='button' ng-click='openOptions()' data-shortcut='option')
-          span.glyphicon.glyphicon-wrench
+          span.material-icons tune
           = ' '
           span {{'popup_showOptions' | tr}}
     form.condition-form(name='conditionForm' style='display: none;'
@@ -99,7 +100,7 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
             button.btn.btn-link.btn-sm.clear-padding(type='button' ng-click='openConditionHelp()')
               | {{"options_showConditionTypeHelp" | tr}}
               = ' '
-              span.glyphicon.glyphicon-new-window
+              span.material-icons open_in_new
           select.form-control(ng-model='rule.condition.conditionType')
             option(value='HostWildcardCondition') {{'condition_HostWildcardCondition' | tr}}
             option(value='HostRegexCondition') {{'condition_HostRegexCondition' | tr}}
@@ -112,7 +113,7 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
             input.form-control.condition-details(type='text' required ng-model='rule.condition.pattern' autofocus)
             span.input-group-btn
               button.btn.btn-default(type='button' ng-click='toggleSubDomainLevel()')
-                i.glyphicon.glyphicon-transfer
+                i.material-icons arrow_forward
         div.form-group
           label {{'options_resultProfile' | tr}}
           div(omega-profile-select='validResultProfiles' ng-model='rule.profileName'
@@ -144,9 +145,9 @@ html(lang='en' ng-app='omegaPopup' ng-controller='PopupCtrl' ng-csp)
         p.help-block(ng-show='!!currentProfileCanAddRule') {{'popup_requestErrorAddCondition' | tr}} 
         div
           button.btn.btn-default.btn-xs.btn-link(ng-click='toggleSummarDetail($event)')
-            i.glyphicon.glyphicon-transfer
+            i.material-icons arrow_forward
           button.btn.btn-default.btn-xs.btn-link(ng-click='inspectNetworkTraffic($event)')
-            i.glyphicon.glyphicon-dashboard
+            i.material-icons dashboard
         .checkbox(ng-repeat='domain in requestInfo.domains track by domain.domain')
           label
             input(type='checkbox' ng-model='domainsForCondition[domain.domain]' autofocus ng-if='$index === 0')

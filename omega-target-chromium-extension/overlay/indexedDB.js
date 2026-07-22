@@ -13,7 +13,7 @@ import FDBVersionChangeEvent from "./lib/zero-dependencies/fake-indexeddb/FDBVer
 
 
 /**
- * author: suziwen1@gmail.com
+ * author: bocchi810
  **/
 const ZeroIndexedDBFactory = ()=> {
   var globalVar =

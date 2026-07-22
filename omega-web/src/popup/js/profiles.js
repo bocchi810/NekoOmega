@@ -5,14 +5,14 @@
   profileTemplate.removeAttribute('id');
 
   var iconForProfileType = {
-    'DirectProfile': 'glyphicon-transfer',
-    'SystemProfile': 'glyphicon-off',
-    'AutoDetectProfile': 'glyphicon-file',
-    'FixedProfile': 'glyphicon-globe',
-    'PacProfile': 'glyphicon-file',
-    'VirtualProfile': 'glyphicon-question-sign',
-    'RuleListProfile': 'glyphicon-list',
-    'SwitchProfile': 'glyphicon-retweet',
+    'DirectProfile': 'arrow_forward',
+    'SystemProfile': 'power_settings_new',
+    'AutoDetectProfile': 'description',
+    'FixedProfile': 'public',
+    'PacProfile': 'description',
+    'VirtualProfile': 'help',
+    'RuleListProfile': 'format_list_bulleted',
+    'SwitchProfile': 'swap_horiz',
   };
   var orderForType = {
     'FixedProfile': -2000,
@@ -122,8 +122,9 @@
 
   function createGlobeIcon(targetEl, color){
     var el = document.createElement('span')
-    el.className = 'glyphicon glyphicon-globe'
+    el.className = 'material-icons public'
     el.style.color = color
+    el.textContent = 'public'
     targetEl.appendChild(el)
   }
 
@@ -179,7 +180,8 @@
         var toggle = document.createElement('div');
         toggle.classList.add('om-edit-toggle');
         var icon = document.createElement('span');
-        icon.setAttribute('class', 'glyphicon glyphicon-chevron-down');
+        icon.setAttribute('class', 'material-icons expand_more');
+        icon.textContent = 'expand_more';
         toggle.appendChild(icon);
 
         toggle.addEventListener('click', function(e) {
@@ -213,12 +215,15 @@
     profileDisp.setAttribute('title',
       targetProfile.desc || targetProfile.name || '');
 
-    var iconClass = iconForProfileType[targetProfile.profileType];
-    var icon = profileDisp.querySelector('.glyphicon');
-    icon.setAttribute('class', 'glyphicon ' + iconClass)
-    icon.style.color = targetProfile.color;
-    if (targetProfile !== profile) {
-      icon.classList.add('om-virtual-profile-icon');
+    var iconName = iconForProfileType[targetProfile.profileType] || 'help';
+    var icon = profileDisp.querySelector('.material-icons');
+    if (icon) {
+      icon.className = 'material-icons';
+      icon.textContent = iconName;
+      icon.style.color = targetProfile.color;
+      if (targetProfile !== profile) {
+        icon.classList.add('om-virtual-profile-icon');
+      }
     }
     return profileDisp;
   }

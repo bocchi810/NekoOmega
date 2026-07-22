@@ -4,19 +4,19 @@ section.settings-group
   h3 {{'Theme'}}
   p
     button.btn.btn-default(type='button' role='button' ng-click='changeTheme("default-dark")')
-      span.glyphicon.glyphicon-heart
+      span.material-icons dark_mode
       = ' '
       | {{'Dark'}}
     button.btn.btn-default(type='button' role='button' ng-click='changeTheme("default-light")')
-      span.glyphicon.glyphicon-heart-empty
+      span.material-icons light_mode
       = ' '
       | {{'Light'}}
     button.btn.btn-default(type='button' role='button' ng-click='changeTheme("default-auto")')
-      span.glyphicon.glyphicon-adjust
+      span.material-icons palette
       = ' '
       | {{'Auto'}}
     button.btn.btn-default(type='button' role='button' ng-click='changeTheme("")')
-      span.glyphicon.glyphicon-remove
+      span.material-icons close
       = ' '
       | {{'Clear'}}
     select.form-control.inline-form-control(ng-model='selectedItem.data'

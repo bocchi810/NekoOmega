@@ -66,7 +66,7 @@ const createTabulator = () => {
     const clearBtnEl = document.createElement('button')
     clearBtnEl.classList.add('btn', 'btn-default', 'btn-sm');
     clearBtnEl.innerHTML = `
-      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      <span class="material-icons delete" aria-hidden="true"></span>
       Delete all temp rules
     `
     clearBtnEl.onclick = async ()=> {

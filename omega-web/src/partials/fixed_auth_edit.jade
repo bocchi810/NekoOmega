@@ -7,7 +7,7 @@ form(ng-submit='authForm.$valid && $close(auth)' name='authForm')
   .modal-body(style='padding-bottom: 0;')
     .form-group(ng-show='!authSupported')
       .alert.alert-danger
-        span.glyphicon.glyphicon-warning-sign
+        span.material-icons warning
         = ' '
         | {{"options_proxy_authNotSupported" | tr:[protocolDisp]}}
     .form-group
@@ -25,7 +25,7 @@ form(ng-submit='authForm.$valid && $close(auth)' name='authForm')
         span.input-group-btn
           button.btn.btn-default(type='button' ng-click='showPassword = !showPassword'
             title="{{(showPassword ? 'options_proxyAuthHidePassword' : 'options_proxyAuthShowPassword') | tr}}" ng-disabled='!auth.username')
-            span.glyphicon(ng-class='{"glyphicon-eye-close": !showPassword, "glyphicon-eye-open": !!showPassword}')
+            span.material-icons {{showPassword ? 'visibility' : 'visibility_off'}}
   .modal-footer
     button.btn.btn-default(type='button' ng-click='$dismiss()') {{'dialog_cancel' | tr}}
     button.btn.btn-primary(type='submit' ng-disabled='!authForm.$valid') {{'dialog_save' | tr}}

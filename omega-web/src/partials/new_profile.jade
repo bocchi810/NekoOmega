@@ -15,7 +15,7 @@ form(ng-submit='newProfile.$valid && $close(profile)' name='newProfile')
         | {{'options_profileNameConflict' | tr}}
       .help-block(ng-show='newProfile.profileNewName.$valid && profile.name && isProfileNameHidden(profile.name)')
         .text-info
-          span.glyphicon.glyphicon-info-sign
+          span.material-icons info
           = ' '
           | {{'options_profileNameHidden' | tr}}
     label {{'options_profileType' | tr}}
@@ -23,7 +23,7 @@ form(ng-submit='newProfile.$valid && $close(profile)' name='newProfile')
       label
         input(type='radio' name='profile-new-type' value='FixedProfile' ng-model='profile.profileType' ng-init='profile.profileType = "FixedProfile"')
         span.profile-type
-          span.glyphicon(ng-class='profileIcons["FixedProfile"]')
+          span.material-icons {{profileIcons['FixedProfile']}}
           = ' '
           span {{'options_profileTypeFixedProfile' | tr}}
         .help-block {{'options_profileDescFixedProfile' | tr}}
@@ -31,7 +31,7 @@ form(ng-submit='newProfile.$valid && $close(profile)' name='newProfile')
       label
         input(type='radio', name='profile-new-type', value='SwitchProfile' ng-model='profile.profileType')
         span.profile-type
-          span.glyphicon(ng-class='profileIcons["SwitchProfile"]')
+          span.material-icons {{profileIcons['SwitchProfile']}}
           = ' '
           span {{'options_profileTypeSwitchProfile' | tr}}
         .help-block {{'options_profileDescSwitchProfile' | tr}}
@@ -39,21 +39,21 @@ form(ng-submit='newProfile.$valid && $close(profile)' name='newProfile')
       label
         input(type='radio', name='profile-new-type', value='PacProfile' ng-model='profile.profileType' ng-disabled='pacProfilesUnsupported')
         span.profile-type
-          span.glyphicon(ng-class='profileIcons["PacProfile"]')
+          span.material-icons {{profileIcons['PacProfile']}}
           = ' '
           span {{'options_profileTypePacProfile' | tr}}
         .help-block {{'options_profileDescPacProfile' | tr}}
         .help-block(ng-show='!pacProfilesUnsupported') {{'options_profileDescMorePacProfile' | tr}}
         .has-error(ng-show='pacProfilesUnsupported')
           .help-block
-            span.glyphicon.glyphicon-warning-sign
+            span.material-icons warning
             = ' '
             | {{'options_pac_profile_unsupported_moz' | tr}}
     .radio
       label
         input(type='radio', name='profile-new-type', value='VirtualProfile' ng-model='profile.profileType')
         span.profile-type
-          span.glyphicon.virtual-profile-icon(ng-class='profileIcons["VirtualProfile"]')
+          span.material-icons.virtual-profile-icon {{profileIcons['VirtualProfile']}}
           = ' '
           span {{'options_profileTypeVirtualProfile' | tr}}
         .help-block {{'options_profileDescVirtualProfile' | tr}}

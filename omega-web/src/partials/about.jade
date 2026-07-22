@@ -2,7 +2,7 @@
   h2 {{'about_title' | tr}}
 section.omega-experimental(ng-show='isExperimental')
   p.alert.alert-warning
-    span.glyphicon.glyphicon-warning-sign
+    span.material-icons warning
     = ' '
     span {{'about_experimental_warning_moz' | tr}}
 section
@@ -15,32 +15,32 @@ section
 section
   p
     button.btn.btn-info(ng-click='reportIssue()' ladda='issueReporting')
-      span.glyphicon.glyphicon-comment
+      span.material-icons comment
       = ' '
       | {{'popup_reportIssues' | tr}}
     = ' '
     button.btn.btn-default(ng-click='downloadLog()' ladda='logDownloading' data-spinner-color="currentColor")
-      span.glyphicon.glyphicon-download
+      span.material-icons download
       = ' '
       | {{'popup_errorLog' | tr}}
     = ' '
     button.btn.btn-danger(ng-click='showResetOptionsModal()' ladda='optionsReseting')
-      span.glyphicon.glyphicon-alert
+      span.material-icons warning
       = ' '
       | {{'options_reset' | tr}}
 section
   p
     | {{'about_version' | tr:[version]}}
   p.text-warning
-    span.glyphicon.glyphicon-info-sign
+    span.material-icons info
     = ' '
     span(ng-bind-html='"about_disclaimer_networkService" | tr')
   p.text-success
-    span.glyphicon.glyphicon-eye-close
+    span.material-icons visibility_off
     = ' '
     span(ng-bind-html='"about_disclaimer_privacy" | tr')
   p.text-info
-    span.glyphicon.glyphicon-question-sign
+    span.material-icons help
     = ' '
     span(ng-bind-html='"about_help" | tr')
 

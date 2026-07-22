@@ -3,22 +3,22 @@
     button.btn(ng-show='exportRuleList' ng-click='exportRuleList(profile.name)'
       title="{{'options_profileExportRuleListHelp' | tr}}"
       ng-class="exportRuleListOptions.warning ? 'btn-warning' : 'btn-default'")
-      span.glyphicon.glyphicon-list
+      span.material-icons format_list_bulleted
       = ' '
       | {{'options_profileExportRuleList' | tr}}
     = ' '
     button.btn.btn-default(ng-show='scriptable' ng-click='exportScript($event, profile.name)' title="{{'options_exportPacFileHelp' | tr}}")
-      span.glyphicon.glyphicon-download
+      span.material-icons download
       = ' '
       | {{'options_profileExportPac' | tr}}
     = ' '
     button.btn.btn-default(ng-click='renameProfile(profile.name)')
-      span.glyphicon.glyphicon-edit
+      span.material-icons edit
       = ' '
       | {{'options_renameProfile' | tr}}
     = ' '
     button.btn.btn-danger(ng-click='deleteProfile(profile.name)')
-      span.glyphicon.glyphicon-trash
+      span.material-icons delete
       = ' '
       | {{'options_deleteProfile' | tr}}
   span.profile-color-editor

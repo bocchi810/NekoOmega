@@ -4,4 +4,4 @@
   span.input-group-btn
     button.btn.btn-default.input-group-clear-btn(type='button' ng-click='toggleClear()'
       ng-disabled='!model && !oldModel' title="{{'inputClear_' + (oldModel ? 'restore' : 'clear') | tr}}")
-      span.glyphicon(ng-class='{"glyphicon-remove": !oldModel, "glyphicon-repeat": !!oldModel}')
+      span.material-icons {{oldModel ? 'repeat' : 'close'}}

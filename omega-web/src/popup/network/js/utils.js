@@ -73,14 +73,14 @@ export const compareProfile = (a, b) => {
 
 
 const iconForProfileType = {
-  'DirectProfile': 'glyphicon-transfer',
-  'SystemProfile': 'glyphicon-off',
-  'AutoDetectProfile': 'glyphicon-file',
-  'FixedProfile': 'glyphicon-globe',
-  'PacProfile': 'glyphicon-file',
-  'VirtualProfile': 'glyphicon-question-sign',
-  'RuleListProfile': 'glyphicon-list',
-  'SwitchProfile': 'glyphicon-retweet',
+  'DirectProfile': 'arrow_forward',
+  'SystemProfile': 'power_settings_new',
+  'AutoDetectProfile': 'description',
+  'FixedProfile': 'public',
+  'PacProfile': 'description',
+  'VirtualProfile': 'help',
+  'RuleListProfile': 'format_list_bulleted',
+  'SwitchProfile': 'swap_horiz',
 };
 
 export const getProfileIcon = (profile)=>{

@@ -8,7 +8,7 @@ div(ng-controller='SwitchProfileCtrl')
     div.condition-help(ng-repeat='group in (showConditionTypes == 0 ? basicConditionTypes : advancedConditionTypes)')
       h4(ng-show="!!('condition_group_' + group.group | tr)")
         a(ng-click='expandedSection.id = $index' role='button')
-          span.glyphicon(ng-class="{'glyphicon-chevron-down': expandedSection.id == $index, 'glyphicon-chevron-right': expandedSection.id != $index}")
+          span.material-icons {{expandedSection.id == $index ? 'expand_more' : 'chevron_right'}}
           = ' '
           | {{'condition_group_' + group.group | tr}}
       dl(ng-show='expandedSection.id == $index')
@@ -16,7 +16,7 @@ div(ng-controller='SwitchProfileCtrl')
         dd(ng-repeat-end)
           div(ng-bind-html='"condition_help_" + type | tr')
           .text-danger(ng-if='isUrlConditionType[type]')
-            span.glyphicon.glyphicon-alert
+            span.material-icons warning
             = ' '
             span(ng-bind-html='"condition_alert_fullUrlLimitation" | tr')
   section.settings-group
@@ -24,7 +24,7 @@ div(ng-controller='SwitchProfileCtrl')
       | {{'options_group_switchRules' | tr}}
       = ' '
       button.btn(ng-click='toggleSource()' ng-class='editSource ? "btn-primary active" : "btn-default"')
-        span.glyphicon.glyphicon-edit
+        span.material-icons edit
         = ' '
         | {{'options_profileEditSource' | tr}}
       = ' '
@@ -32,13 +32,13 @@ div(ng-controller='SwitchProfileCtrl')
         ng-show='editSource' target='_blank' 
         title='{{"options_profileEditSourceHelp" | tr}}'
         href='{{"options_profileEditSourceHelpUrl" | tr}}')
-        span.glyphicon.glyphicon-question-sign
+        span.material-icons help
     .alert.alert-danger.width-limit(ng-show='source.error')
-      span.glyphicon.glyphicon-remove
+      span.material-icons close
       = ' '
       | {{source.error.message}}
     .alert.alert-danger(ng-show='!!hasUrlConditions')
-      span.glyphicon.glyphicon-alert
+      span.material-icons warning
       = ' '
       span(ng-bind-html='"condition_alert_fullUrlLimitation" | tr')
     .rules-source(ng-show='editSource')
@@ -54,7 +54,7 @@ div(ng-controller='SwitchProfileCtrl')
               button.btn.btn-link.btn-sm.clear-padding.toggle-condition-help(
                 title='{{"options_showConditionTypeHelp" | tr}}'
                 ng-click='conditionHelp.show = !conditionHelp.show')
-                span.glyphicon.glyphicon-question-sign
+                span.material-icons help
             th {{'options_conditionDetails' | tr}}
             th {{'options_resultProfile' | tr}}
             th {{'options_conditionActions' | tr}}
@@ -62,12 +62,12 @@ div(ng-controller='SwitchProfileCtrl')
         tbody(ui-sortable='sortableOptions' ng-model='profile.rules')
           tr.switch-rule-row(ng-repeat='rule in profile.rules')
             td.sort-bar
-              span.glyphicon.glyphicon-sort
+              span.material-icons sort
             td(ng-class='{"has-icon": isUrlConditionType[rule.condition.conditionType]}')
               select.form-control(ng-model='rule.condition.conditionType'
                 ng-options='type.type as ("condition_" + type.type | tr) group by (type.group | tr) for type in conditionTypes')
               a.icon-wrapper(ng-href='{{"condition_alert_fullUrlLimitationLink" | tr}}' target='_blank' ng-if='isUrlConditionType[rule.condition.conditionType]')
-                span.glyphicon.glyphicon-alert.text-danger
+                span.material-icons warning.text-danger
             td(ng-switch='rule.condition.conditionType' ng-class='{"has-warning": conditionHasWarning(rule.condition)}')
               span(ng-switch-when='FalseCondition')
                 span(ng-show='!!rule.condition.pattern')
@@ -102,12 +102,12 @@ div(ng-controller='SwitchProfileCtrl')
                 ng-class='{disabled: rule.condition.conditionType == "NeverCondition"}')
             td
               button.btn.btn-danger.btn-sm(title="{{'options_deleteRule' | tr}}" ng-click='removeRule($index)')
-                span.glyphicon.glyphicon-trash
+                span.material-icons delete
               = ' '
               button.btn.btn-default.btn-sm(title="{{'options_cloneRule' | tr}}" ng-click='cloneRule($index)')
-                span.glyphicon.glyphicon-duplicate
+                span.material-icons content_copy
               button.btn.btn-default.btn-sm(title="{{'options_ruleNote' | tr}}" ng-if='!showNotes' ng-click='addNote($index)')
-                span.glyphicon.glyphicon-comment
+                span.material-icons comment
             td(ng-if='showNotes')
               input.form-control(ng-model='rule.note')
         tbody
@@ -115,13 +115,13 @@ div(ng-controller='SwitchProfileCtrl')
             td(style='border-right: none;')
             td(style='border-left: none;' colspan='4' ng-attr-colspan='{{showNotes ? 5 : 4}}')
               button.btn.btn-default.btn-sm(ng-click='addRule()')
-                span.glyphicon.glyphicon-plus
+                span.material-icons add
                 = ' '
                 span {{'options_addCondition' | tr}}
         tbody.switch-attached(ng-if='attached')
           tr
             td(style='border-right: none;')
-              span.glyphicon(class='{{profileIcons["RuleListProfile"]}}')
+              span.material-icons {{profileIcons["RuleListProfile"]}}
             td(style='border-left: none;')
               span.checkbox
                 label
@@ -137,7 +137,7 @@ div(ng-controller='SwitchProfileCtrl')
                 disp-name='dispNameFilter' options='options' ng-class='{disabled: !attachedOptions.enabled}')
             td
               button.btn.btn-danger.btn-sm(title="{{'options_deleteAttached' | tr}}" ng-click='removeAttached()')
-                span.glyphicon.glyphicon-trash
+                span.material-icons delete
             td(ng-if='showNotes')
         tbody
           tr.switch-default-row
@@ -148,13 +148,13 @@ div(ng-controller='SwitchProfileCtrl')
                 disp-name='dispNameFilter' options='options')
             td
               button.btn.btn-info.btn-sm(title="{{'options_resetRules_help' | tr}}" ng-click='resetRules()')
-                span.glyphicon.glyphicon-chevron-up
+                span.material-icons expand_less
             td(ng-if='showNotes')
   section.settings-group(ng-if='!attached')
     h3 {{'options_group_attachProfile' | tr}}
     p.help-block {{'options_attachProfileHelp' | tr}}
     button.btn.btn-default(ng-click='attachNew()')
-      span.glyphicon.glyphicon-plus
+      span.material-icons add
       = ' '
       | {{'options_attachProfile' | tr}}
   section.settings-group(ng-if='attached')
@@ -189,9 +189,9 @@ div(ng-controller='SwitchProfileCtrl')
                     input.form-control(type='text' ng-model='header.value' placeholder="{{'options_ruleListHeaderValuePlaceholder' | tr}}")
                   td
                     button.btn.btn-danger.btn-sm(type='button' title="{{'options_deleteHeader' | tr}}" ng-click='removeHeader($index)')
-                      span.glyphicon.glyphicon-trash
+                      span.material-icons delete
           button.btn.btn-default.btn-sm(type='button' ng-click='addHeader()')
-            span.glyphicon.glyphicon-plus
+            span.material-icons add
             = ' '
             | {{'options_addHeader' | tr}}
         p.help-block {{'options_ruleListHeadersHelp' | tr}}
@@ -199,7 +199,7 @@ div(ng-controller='SwitchProfileCtrl')
       button.btn.btn-default(ng-disabled='!attached.sourceUrl' ng-click='updateProfile(attached.name)'
           ladda='updatingProfile[attached.name]' data-spinner-color="#000000"
           ng-class='attached.sourceUrl && !attached.lastUpdate ? "btn-primary" : "btn-default"')
-        | #[span.glyphicon.glyphicon-download-alt] {{'options_downloadProfileNow' | tr}}
+        | #[span.material-icons download] {{'options_downloadProfileNow' | tr}}
   section.settings-group(ng-if='attached')
     h3 {{'options_group_ruleListText' | tr}}
     p.alert.alert-success.width-limit(ng-show='attached.sourceUrl && attached.lastUpdate')
@@ -207,7 +207,7 @@ div(ng-controller='SwitchProfileCtrl')
     p.alert.alert-danger.width-limit(ng-show='attached.sourceUrl && !attached.lastUpdate')
       | {{'options_ruleListObsolete' | tr}}
     p.alert.alert-danger.width-limit(ng-show='attachedRuleListError')
-      span.glyphicon.glyphicon-remove
+      span.material-icons close
       = ' '
       | {{attachedRuleListError.message}}
     textarea#attached-rulelist.monospace.form-control.width-limit(rows=20

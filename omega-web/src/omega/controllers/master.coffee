@@ -4,6 +4,10 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
   isProfileNameHidden, dispNameFilter, downloadFile, themes
 ) ->
 
+  $scope.sidebarCollapsed = false
+  $scope.toggleSidebar = ->
+    $scope.sidebarCollapsed = !$scope.sidebarCollapsed
+
   if browser?.proxy?.register? or browser?.proxy?.registerProxyScript?
     $scope.isExperimental = true
     $scope.pacProfilesUnsupported = true
@@ -311,10 +315,10 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
     $scope.profileIcons[type] = $scope.profileIcons['RuleListProfile']
 
   $scope.alertIcons =
-    'success': 'glyphicon-ok',
-    'warning': 'glyphicon-warning-sign',
-    'error': 'glyphicon-remove',
-    'danger': 'glyphicon-danger',
+    'success': 'check_circle',
+    'warning': 'warning',
+    'error': 'close',
+    'danger': 'error',
 
   $scope.alertClassForType = (type) ->
     return '' if not type

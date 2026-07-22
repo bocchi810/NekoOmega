@@ -20,7 +20,7 @@ const updateMainBtn = (mainBtnEl, profile, profiles)=>{
   mainBtnEl.dataset.profile = profile.name;
   mainBtnEl.innerHTML = `
     <span>
-      <span class="glyphicon ${iconClass}" style="color: ${targetProfile.color};">
+      <span class="material-icons" style="color: ${targetProfile.color};">${iconClass}</span>
       </span>
     </span>
     <span>${safeTexts(text)}</span>
@@ -54,7 +54,7 @@ function createMenuItemForProfile(profile, profiles) {
 
   profileDisp.innerHTML = `
       <a href="#" role="button">
-        <span class="glyphicon ${iconClass}" style="color: ${targetProfile.color};"></span>
+        <span class="material-icons" style="color: ${targetProfile.color};">${iconClass}</span></span>
         <span class="om-profile-name">${safeTexts(text)}</span>
       </a>
   `
@@ -238,7 +238,7 @@ export const initUrlCellDetail = async (cell) => {
               <input class="form-control condition-details" type="text" required readonly>
               <span class="input-group-btn">
                 <button class="btn btn-default toggle-subdomain-level-btn" type="button">
-                  <i class="glyphicon glyphicon-transfer"></i>
+                  <i class="material-icons arrow_forward"></i>
                 </button>
               </span>
             </span>

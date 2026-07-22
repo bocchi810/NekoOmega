@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Proxy SwitchyOmega 3 (ZeroOmega)",
+  "name": "NekoOmega",
   "version": "3.5.0",
+  "author": "bocchi810",
   "description": "__MSG_manifest_app_description__",
   "icons": {
     "16": "img/icons/omega-action-16.png",
@@ -48,7 +49,7 @@
   "host_permissions": ["<all_urls>"],
   "browser_specific_settings": {
     "gecko": {
-      "id": "suziwen1@gmail.com",
+      "id": "nekoomega@bocchi810",
       "strict_min_version": "112.0"
     }
   }
