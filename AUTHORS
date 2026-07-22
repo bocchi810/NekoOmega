@@ -1,7 +1,7 @@
-# NekoOmega — based on SwitchyOmega (FelisCatus <catusx@gmail.com>)
+# NekoOmega — based on SwitchyOmega and ZeroOmega
 
 # NekoOmega author:
-bocchi810
+bocchi810 <admin@haoming9245.top>
 
 # Upstream authors (SwitchyOmega):
 FelisCatus <catusx@gmail.com>
@@ -12,10 +12,63 @@ Michal Čihař <michal@cihar.com>
 masoud Rahmani <mrem71@gmail.com>
 
 # NekoOmega includes or links to (unchanged):
-# * jQuery UI (custom build)
-#     => omega-web/lib/jquery-ui-*.js
+# npm packages:
+#   angular ~1.8.2 (MIT)
+#   angular-animate ~1.7.2 (MIT)
+#   angular-bootstrap ~0.12.0 (MIT)
+#   angular-i18n ~1.7.2 (MIT)
+#   angular-ladda ~0.2.1 (MIT)
+#   angular-loader ~1.7.2 (MIT)
+#   angular-sanitize ~1.7.2 (MIT)
+#   angular-spectrum-colorpicker (MIT)
+#   angular-ui-router ~0.2.18 (MIT)
+#   angular-ui-sortable ~0.13.3 (MIT)
+#   angular-ui-utils bower-validate (MIT)
+#   blob (MIT)
+#   bluebird ^2.3.2 (MIT)
+#   bootstrap ~3.3.2 (MIT)
+#   bower ~1.8.4 (MIT)
+#   chai ~1.9.1 (MIT)
+#   coffee-script ^1.7.1 (MIT)
+#   coffeeify ^0.7.0 (MIT)
+#   coffeelint ^1.16.0 (MIT)
+#   FileSaver =1.3.3 (MIT)
+#   grunt ~0.4.1/^0.4.5 (MIT)
+#   grunt-autoprefixer ^1.0.1 (MIT)
+#   grunt-bower-task ^0.5.0 (MIT)
+#   grunt-browserify ^3.0.0 (MIT)
+#   grunt-coffeelint ^0.0.13 (MIT)
+#   grunt-contrib-coffee ^0.11.1 (MIT)
+#   grunt-contrib-compress ^0.12.0 (MIT)
+#   grunt-contrib-concat ^0.5.0 (MIT)
+#   grunt-contrib-copy ^0.5.0 (MIT)
+#   grunt-contrib-jade ^0.12.0 (MIT)
+#   grunt-contrib-less ^0.11.4 (MIT)
+#   grunt-contrib-watch ^0.6.1 (MIT)
+#   grunt-hub ^0.7.0 (MIT)
+#   grunt-mocha-test ~0.11.0 (MIT)
+#   grunt-ng-annotate ^0.3.2 (MIT)
+#   heap ^0.2.6 (MIT)
+#   ip-address ^4.0.0 (MIT)
+#   jqueryui-touch-punch (MIT)
+#   jsondiffpatch ^0.1.7/^0.1.8 (MIT)
+#   limiter ^1.0.5 (MIT)
+#   load-grunt-config ^0.13.1 (MIT)
+#   lolex ^1.4.0 (BSD-3-Clause)
+#   minifyify ^4.1.1 (MIT)
+#   ngprogress ~1.0.4 (MIT)
+#   po2json ^0.3.2 (MIT)
+#   script.js ~2.5.3 (MIT)
+#   shepherd.js ~0.5.1 (MIT)
+#   sinon ^1.12.2 (BSD-3-Clause)
+#   sinon-chai ^2.6.0 (BSD-2-Clause)
+#   tldjs ^1.5.2 (MIT)
+#   uglify-js ^2.4.15 (BSD-2-Clause)
+#   xhr ^1.16.0 (MIT)
+#   zero-dependencies (MIT) — bundled deps: compare-versions, csso,
+#     fake-indexeddb, filesize, idb-keyval, iframeResizer, jszip,
+#     jquery-ui, moment, tabulator, toastify
+#   grunt-cli ~1.2.0 (MIT)
+
+#   jQuery UI (custom build)
 #     => Copyright 2014 jQuery Foundation and other contributors; Licensed MIT
-# * Many npm packages and bower packages
-#     => **/node_modules, **/bower_components
-#     => Please refer to their project homepages or npm package pages for the
-#        copyright and license information of each package.
